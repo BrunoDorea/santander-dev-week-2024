@@ -1,5 +1,6 @@
 package br.com.brunodorea.sdw2024;
 
+import br.com.brunodorea.sdw2024.application.AskChampionUseCase;
 import br.com.brunodorea.sdw2024.application.ListChampionsUseCase;
 import br.com.brunodorea.sdw2024.domain.ports.ChampionsRepository;
 import org.springframework.boot.SpringApplication;
@@ -13,6 +14,11 @@ public class Application {
 
 	@Bean
 	public ListChampionsUseCase provideListChampionsUseCase(ChampionsRepository repository) {
-		return  new ListChampionsUseCase(repository);
+		return new ListChampionsUseCase(repository);
+	}
+
+	@Bean
+	public AskChampionUseCase provideAskChampionsUseCase(ChampionsRepository repository) {
+		return new AskChampionUseCase(repository);
 	}
 }
