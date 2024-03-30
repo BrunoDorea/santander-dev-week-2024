@@ -71,7 +71,7 @@ async function renderChampions() {
 }
 
 async function onChangeChampionSelected(id, imageUrl) {
-    state.views.avatar.style.backgroundImage = `url('${imageUrl})`;
+    state.views.avatar.style.backgroundImage = `url('${imageUrl}')`;
     state.views.avatar.dataset.id = id;
     await resetForm();
 }
@@ -83,12 +83,21 @@ async function resetForm() {
 
 async function getRandomQuote() {
     const quotes = [
-        "Manda ver meu nobre",
+        "Manda Ver meu nobre",
+        "Pode vir quente que eu to fervendo",
+        "Aguardo sua pergunta",
+        "Espero ansiosamente pela sua pergunta",
+        "Estou começando a ficar com tédio...",
+        "Tenha vidas a salvar, vá depressa com isso",
+        "Não vai ficar ai o dia todo vai ?",
+        "Talvez seja melhor ir jogar Dota...",
+        "Ainda to tentando entender como essa geringonça funciona",
         "Vamo que vamo meu chapa",
-        "Não vai ficar ai o dia todo vai?",
     ];
 
     const randomIndex = Math.floor(Math.random() * quotes.length);
+
+    return quotes[randomIndex];
 }
 
 async function fetchAskChampion() {
